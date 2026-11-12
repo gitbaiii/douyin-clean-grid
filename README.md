@@ -2,7 +2,6 @@
 
 让抖音精选首页保持整齐的封面网格，减少不必要的视频和直播预览。
 
-**当前版本：v0.6.1，个人试用版。** 非抖音官方扩展，与抖音、哔哩哔哩及 Bilibili Evolved 无关联。不附带平台的视频、图片或其他资源。
 
 ## 功能
 
@@ -14,11 +13,10 @@
 
 ## 安装
 
-1. 在 [Releases](https://github.com/gitbaiii/douyin-clean-grid/releases) 下载 `douyin-clean-grid-v0.6.1.zip`，不要选 GitHub 自动生成的 Source code 压缩包。
-2. 解压到固定文件夹，确认文件夹内直接包含 `manifest.json`。
-3. Edge 打开 `edge://extensions`；Chrome 打开 `chrome://extensions`。
-4. 开启「开发人员模式」，点击「加载解压缩的扩展」，选择刚才的文件夹。
-5. 打开或刷新 <https://www.douyin.com/jingxuan>。
+1. 下载解压到固定文件夹，确认文件夹内直接包含 `manifest.json`。
+2. Edge 打开 `edge://extensions`；Chrome 打开 `chrome://extensions`。
+3. 开启「开发人员模式」，点击「加载解压缩的扩展」，选择刚才的文件夹。
+4. 打开或刷新 <https://www.douyin.com/jingxuan>。
 
 需要 Chromium 111 或更新版本。目前未上架扩展商店。
 
