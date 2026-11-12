@@ -1,0 +1,8 @@
+{
+  "name": "douyin-clean-grid",
+  "version": "0.6.1",
+  "private": true,
+  "description": "抖音精选清爽首页浏览器扩展的开发与隔离测试工具",
+  "scripts": { "test": "node tests/run.cjs" },
+  "dependencies": { "linkedom": "^0.18.15" }
+}

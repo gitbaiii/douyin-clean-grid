@@ -1,0 +1,53 @@
+name: Test, package and release
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm test
+      - name: Package extension
+        shell: powershell
+        run: .\Build.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-package
+          path: dist/*
+          if-no-files-found: error
+  release:
+    if: github.event_name != 'pull_request' && github.repository == 'gitbaiii/douyin-clean-grid'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: extension-package
+          path: dist
+      - name: Publish a new version as a pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(node -p "require('./manifest.json').version")
+          if gh release view "v$version" >/dev/null 2>&1; then
+            echo "Release v$version already exists; keeping it unchanged."
+            exit 0
+          fi
+          gh release create "v$version" dist/* --target "$GITHUB_SHA" --title "v$version · 抖音精选清爽首页（测试版）" --notes-file RELEASE_NOTES.md --prerelease

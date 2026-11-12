@@ -1,0 +1,75 @@
+/* Keep every grid item measurable: the site's virtualizer measures the first
+   six children once the list reaches 100 entries. display:none breaks it. */
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type {
+  grid-area: auto !important;
+}
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .jingxuanVideoCard .videoImage,
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .lvGSE56u {
+  padding-top: 56.25% !important;
+}
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .t9xvAX3z,
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .hEUr929r {
+  display: block !important;
+}
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > .discover-video-card-item.Ihfp7fqL:first-child.Ihfp7fqL {
+  padding-top: calc(56.25% + var(--jx-info-height)) !important;
+}
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .gkRBxZW6 {
+  font-size: 15px !important;
+  line-height: 23px !important;
+  -webkit-line-clamp: 2 !important;
+}
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .rEDnbfEe {
+  font-size: 13px !important;
+  line-height: 21px !important;
+  margin-top: 4px !important;
+}
+/* Cover the preview surface, not the grid item. React keeps ownership of its
+   player DOM; blocked-load error panels never replace the visible thumbnail. */
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .douyin-player,
+html[data-dcg-active="true"] .jingxuanFeedList .bigCardWaterfallContainer > div:first-of-type .bigCardQuickPlayerContainer,
+html[data-dcg-block-previews="true"] .jingxuanFeedList .douyin-player,
+html[data-dcg-block-previews="true"] .jingxuanFeedList .xgplayer {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.jingxuanFeedList [data-dcg-static-cover="true"] {
+  position: relative !important;
+  overflow: hidden !important;
+}
+.jingxuanFeedList [data-dcg-static-cover="true"] .douyin-player,
+.jingxuanFeedList [data-dcg-static-cover="true"] .xgplayer,
+.jingxuanFeedList [data-dcg-static-cover="true"] .bigCardQuickPlayerContainer {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.jingxuanFeedList .dcg-static-cover {
+  display: none;
+  pointer-events: none !important;
+}
+.jingxuanFeedList [data-dcg-static-cover="true"] > .dcg-static-cover {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: #202126;
+  border-radius: inherit;
+}
+.jingxuanFeedList .dcg-static-cover > img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+}
+.jingxuanFeedList .dcg-static-cover > span {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  color: white;
+  background: #0009;
+  font-size: 12px;
+  line-height: 18px;
+}
