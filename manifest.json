@@ -1,12 +1,10 @@
 {
   "manifest_version": 3,
   "name": "抖音精选 · 清爽首页",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "minimum_chrome_version": "111",
   "description": "将抖音精选首页大卡片缩为普通封面，阻止视频及直播预览。",
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "action": {
     "default_title": "抖音精选 · 清爽首页",
     "default_popup": "popup.html",
@@ -19,25 +17,15 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://www.douyin.com/*"
-      ],
-      "js": [
-        "preview-guard.js"
-      ],
+      "matches": ["https://www.douyin.com/*"],
+      "js": ["preview-guard.js"],
       "run_at": "document_start",
       "world": "MAIN"
     },
     {
-      "matches": [
-        "https://www.douyin.com/*"
-      ],
-      "js": [
-        "content.js"
-      ],
-      "css": [
-        "content.css"
-      ],
+      "matches": ["https://www.douyin.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
       "run_at": "document_start"
     }
   ],

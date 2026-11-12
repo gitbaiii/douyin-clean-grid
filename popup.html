@@ -1,14 +1,24 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <title>清爽首页</title>
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-  <h1>抖音精选 · 清爽首页</h1>
-  <label><input id="enabled" type="checkbox" disabled> 首页大卡片改为普通卡片</label>
-  <label><input id="blockHover" type="checkbox" disabled> 阻止视频、直播预览及预加载</label>
-  <script src="popup.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>清爽首页</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="popup-header">
+      <img src="icons/icon-48.png" alt="" width="32" height="32" />
+      <h1>抖音精选 · 清爽首页</h1>
+    </header>
+    <label
+      ><input id="enabled" type="checkbox" disabled />
+      首页大卡片改为普通卡片</label
+    >
+    <label
+      ><input id="blockHover" type="checkbox" disabled />
+      阻止视频、直播预览及预加载</label
+    >
+    <button id="reset-settings" type="button">恢复默认设置</button>
+    <script src="popup.js"></script>
+  </body>
 </html>
